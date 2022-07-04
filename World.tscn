@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/GrassBackground.png" type="Texture" id=1]
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World/Bush.tscn" type="PackedScene" id=3]
+
+[sub_resource type="TileSet" id=1]
+
+[node name="World" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 160, 90 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 320, 180 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Player" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 80, 32 )
+
+[node name="Bush" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 16, 24 )
+
+[node name="Bush2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 64, 104 )
+
+[node name="Bush3" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 152, 32 )
+
+[node name="Bush4" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 248, 136 )
+
+[node name="Bush5" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 272, 40 )
+
+[node name="Bush6" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 120, 152 )
